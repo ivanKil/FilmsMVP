@@ -17,7 +17,7 @@ class FilmViewHolder(view: View, val imageLoader: IImageLoader<ImageView>) :
     fun bind(film: Film, delegate: FilmAdapter.Delegate?) {
         with(viewBinding) {
             title.text = film.name
-            cardFilm.setOnClickListener { delegate?.onUserPicked(film.id) }
+            cardFilm.setOnClickListener { delegate?.onFilmPicked(film.id) }
             imageLoader.loadInto(POSTER_BASE_URL + film.poster ?: "", poster)
         }
     }

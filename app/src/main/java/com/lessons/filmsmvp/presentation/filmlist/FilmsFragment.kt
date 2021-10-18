@@ -44,8 +44,8 @@ class FilmsFragment : AbsFragment(R.layout.films_lenta), FilmsView, FilmAdapter.
         return vb!!.root
     }
 
-    override fun showRepos(users: List<Film>) {
-        repoAdapter.submitList(users)
+    override fun showRepos(films: List<Film>) {
+        repoAdapter.submitList(films)
         repoAdapter.notifyDataSetChanged()
     }
 
@@ -56,7 +56,7 @@ class FilmsFragment : AbsFragment(R.layout.films_lenta), FilmsView, FilmAdapter.
         ).show()
     }
 
-    override fun onUserPicked(filmId: Int) {
+    override fun onFilmPicked(filmId: Int) {
         presenter.displayFilmInfo(filmId)
     }
 
