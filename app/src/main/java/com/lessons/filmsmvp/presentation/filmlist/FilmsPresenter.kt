@@ -10,7 +10,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import moxy.MvpPresenter
 
 class FilmsPresenter(
-    private val usersRepo: FilmsRepository,
+    private val filmsRepository: FilmsRepository,
     private val router: Router
 ) : MvpPresenter<FilmsView>() {
     private var disposables = CompositeDisposable()
@@ -20,11 +20,11 @@ class FilmsPresenter(
     }
 
     private fun loadData() {
-        usersRepo.getPlayingNow(1)
+        filmsRepository.getPlayingNow(1)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { viewState.showRepos(it.results ?: listOf()) },
+                { viewState.showRepos(it) },
                 viewState::setError
             )
             .addTo(disposables)

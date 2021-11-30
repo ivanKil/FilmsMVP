@@ -1,8 +1,8 @@
 package com.lessons.filmsmvp.data.film
 
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Single
 
 interface FilmsRepository {
-    fun getPlayingNow(page: Int, query: String? = null): Observable<FilmsResponse>
-    fun getFilmDetails(filmId: Int, append_to_response: String = "credits"): Observable<FilmDetail>
+    fun getPlayingNow(page: Int, query: String? = null): Single<List<Film>>
+    fun getFilmDetails(filmId: Int): Single<FilmDetail>
 }

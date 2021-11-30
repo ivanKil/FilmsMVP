@@ -12,7 +12,7 @@ class FilmAdapter(private val delegate: Delegate?, val imageLoader: IImageLoader
     ListAdapter<Film, FilmViewHolder>(FilmDiff) {
 
     interface Delegate {
-        fun onUserPicked(filmId: Int)
+        fun onFilmPicked(filmId: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmViewHolder =

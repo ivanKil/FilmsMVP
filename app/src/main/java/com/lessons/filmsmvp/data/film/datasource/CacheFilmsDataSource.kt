@@ -4,7 +4,10 @@ import com.lessons.filmsmvp.data.film.Film
 import com.lessons.filmsmvp.data.film.FilmDetail
 import io.reactivex.rxjava3.core.Single
 
-interface FilmsDataSource {
-    fun getPlayingNow(page: Int, query: String? = null): Single<List<Film>>
+interface CacheFilmsDataSource {
+    fun getPlayingNow(): Single<List<Film>>
     fun getFilmDetails(filmId: Int): Single<FilmDetail>
+
+    fun retainFilms(films: List<Film>): Single<List<Film>>
+    fun retainFilmDetail(filmDetail: FilmDetail): Single<FilmDetail>
 }

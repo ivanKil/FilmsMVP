@@ -7,6 +7,6 @@ import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndStrategy::class)
 interface FilmsView : MvpView {
-    fun showRepos(users: List<Film>)
+    fun showRepos(films: List<Film>)
     fun setError(er: Throwable)
 }
