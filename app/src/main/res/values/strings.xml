@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FilmsMVP</string>
+    <string name="now_playing">Сейчас в кинотеатрах</string>
+    <string name="budget">Бюджет: %1$s</string>
+    <string name="dont_know">неизвестно</string>
+    <string name="err">Ошибка получения данных</string>
+    <string name="release_date">Дата выхода: %1$s</string>
+    <string name="run_time">%1$s мин.</string>
 </resources>
